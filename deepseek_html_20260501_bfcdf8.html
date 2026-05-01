@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Professional one-page CV of Emily Chen – Full-Stack Software Engineer with modern web expertise.">
+  <title>Emily Chen · Software Engineer CV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eef2f5;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.45;
+      color: #1e2a3e;
+      padding: 2rem 1rem;
+    }
+
+    /* main CV card – fits classic A4 proportions */
+    .resume-card {
+      max-width: 1050px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+      display: grid;
+      grid-template-columns: 34% 66%;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    /* ========== SIDEBAR (LEFT) ========== */
+    .sidebar {
+      background: #0f2b3d;
+      color: #f0f6fa;
+      padding: 2rem 1.6rem;
+    }
+
+    .name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+      color: white;
+    }
+
+    .title {
+      font-size: 1rem;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.18);
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      margin-bottom: 1.3rem;
+      letter-spacing: 0.2px;
+    }
+
+    .contact-info {
+      margin: 1.5rem 0 1.8rem 0;
+      list-style: none;
+    }
+
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .contact-info li span:first-child {
+      font-size: 1.1rem;
+      min-width: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin: 1.8rem 0 1rem 0;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .skill-list, .lang-list, .interest-list {
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    .skill-list li, .lang-list li, .interest-list li {
+      font-size: 0.85rem;
+      margin-bottom: 0.55rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .skill-list li strong, .lang-list li strong {
+      font-weight: 600;
+      min-width: 85px;
+      font-size: 0.85rem;
+    }
+
+    .interest-list li {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    /* ========== MAIN CONTENT (RIGHT) ========== */
+    .main {
+      background: white;
+      padding: 2rem 2rem 2rem 2rem;
+    }
+
+    .main-section {
+      margin-bottom: 1.6rem;
+    }
+
+    .main-section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f2b3d;
+      letter-spacing: -0.2px;
+      border-left: 4px solid #2c7da0;
+      padding-left: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .job, .education-item, .project-item {
+      margin-bottom: 1.3rem;
+    }
+
+    .job-header, .edu-header, .project-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+
+    .job-title, .edu-title, .project-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e4663;
+    }
+
+    .company, .institution {
+      font-weight: 500;
+      color: #2c7da0;
+      font-size: 0.9rem;
+    }
+
+    .date {
+      font-size: 0.75rem;
+      color: #5e7c8c;
+      font-weight: 400;
+      background: #eff3f6;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+    }
+
+    .job-description, .project-description {
+      margin-top: 0.5rem;
+      padding-left: 0.2rem;
+    }
+
+    .job-description ul, .project-description ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .job-description li, .project-description li {
+      font-size: 0.85rem;
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .job-description li::before, .project-description li::before {
+      content: "▹";
+      color: #2c7da0;
+      font-size: 0.75rem;
+    }
+
+    .summary-text {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #2c3e4e;
+      margin-bottom: 0.2rem;
+    }
+
+    hr {
+      margin: 0.6rem 0 1rem;
+      border: 0;
+      height: 1px;
+      background: #e2e8f0;
+    }
+
+    /* print button row */
+    .print-toolbar {
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+
+    .print-btn {
+      background: #f0f4f8;
+      border: none;
+      padding: 0.45rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1e4663;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .print-btn:hover {
+      background: #2c7da0;
+      color: white;
+    }
+
+    /* responsive: mobile first stacking */
+    @media (max-width: 750px) {
+      .resume-card {
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+      }
+      .sidebar {
+        padding: 1.8rem;
+      }
+      .main {
+        padding: 1.8rem;
+      }
+      body {
+        padding: 1rem;
+      }
+      .job-header, .edu-header {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+    }
+
+    /*  PRINT STYLES — guaranteed one-page A4 / PDF */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+      .resume-card {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        grid-template-columns: 32% 68%;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      .sidebar, .main {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .sidebar {
+        background: #f8fafc !important;
+        color: #0f2b3d !important;
+        border-right: 1px solid #ddd;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .sidebar .name, .sidebar .title {
+        color: #0f2b3d !important;
+      }
+      .sidebar .section-title {
+        border-bottom-color: #aaa;
+        color: #0f2b3d !important;
+      }
+      .skill-list li strong, .lang-list li strong {
+        color: #0f2b3d;
+      }
+      .interest-list li {
+        background: #e9ecef;
+        color: #1a3a4f;
+      }
+      .main {
+        background: white;
+        color: black;
+      }
+      .print-toolbar, .print-btn {
+        display: none;
+      }
+      .job-description li::before, .project-description li::before {
+        color: #2c7da0;
+      }
+      body, .resume-card, .sidebar, .main, .main-section, .job, .education-item {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      h2, h3, .job-header {
+        page-break-after: avoid;
+      }
+      /* ensure compact but readable for one physical page */
+      .sidebar {
+        padding: 0.9rem 1.2rem;
+      }
+      .main {
+        padding: 1rem 1.5rem 1rem 1.2rem;
+      }
+      .job, .education-item, .project-item {
+        margin-bottom: 0.85rem;
+      }
+      .section-title {
+        margin: 0.8rem 0 0.5rem 0;
+      }
+      .summary-text {
+        font-size: 0.8rem;
+      }
+      .job-description li, .project-description li {
+        font-size: 0.78rem;
+      }
+      .date {
+        background: #eef2f5;
+        border: 1px solid #ddd;
+      }
+    }
+
+    /* small enhancements */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .contact-info li span:last-child {
+      opacity: 0.92;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+<div class="resume-card">
+  <!-- LEFT COLUMN: personal, contact, skills, languages, interests -->
+  <div class="sidebar">
+    <div class="name">Emily Chen</div>
+    <div class="title">Full-Stack Software Engineer</div>
+    
+    <ul class="contact-info">
+      <li><span>📞</span><span>+1 (415) 902-1347</span></li>
+      <li><span>✉️</span><span>emily.chen@techcv.io</span></li>
+      <li><span>📍</span><span>San Francisco, CA</span></li>
+      <li><span>🔗</span><span>linkedin.com/in/emilychen</span></li>
+      <li><span>🐙</span><span>github.com/emily-chen-dev</span></li>
+    </ul>
+
+    <div class="section-title">Technical Skills</div>
+    <ul class="skill-list">
+      <li><strong>Languages:</strong> JavaScript (ES6+), TypeScript, Java, Python, SQL</li>
+      <li><strong>Frontend:</strong> React, Vue.js, Next.js, Tailwind, HTML5/CSS3</li>
+      <li><strong>Backend:</strong> Node.js, Spring Boot (Java), Express, REST APIs</li>
+      <li><strong>Tools:</strong> Git, Docker, Jest, Figma, Webpack, Vite</li>
+    </ul>
+
+    <div class="section-title">Languages</div>
+    <ul class="lang-list">
+      <li><strong>English</strong> – Native / Fluent</li>
+      <li><strong>Mandarin</strong> – Professional working proficiency</li>
+      <li><strong>Spanish</strong> – Intermediate (B1)</li>
+    </ul>
+
+    <div class="section-title">Core Strengths</div>
+    <ul class="interest-list">
+      <li>Agile/Scrum</li>
+      <li>Problem Solving</li>
+      <li>Code Reviews</li>
+      <li>Mentorship</li>
+      <li>Cross-team Collab</li>
+    </ul>
+  </div>
+
+  <!-- RIGHT COLUMN: summary, experience, education, projects -->
+  <div class="main">
+    <div class="print-toolbar">
+      <button class="print-btn" id="printResumeBtn">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <!-- Profile summary -->
+    <div class="main-section">
+      <h2>Profile</h2>
+      <div class="summary-text">
+        Results-driven Full-Stack Engineer with 6+ years of experience crafting scalable web applications.
+        Passionate about clean architecture, performance optimization, and modern UI/UX. 
+        Experienced in leading feature teams and delivering high-impact products from concept to deployment.
+      </div>
+    </div>
+
+    <!-- Work Experience -->
+    <div class="main-section">
+      <h2>Experience</h2>
+      
+      <div class="job">
+        <div class="job-header">
+          <div><span class="job-title">Senior Frontend Engineer</span> · <span class="company">Nexify Technologies</span></div>
+          <div class="date">Jan 2023 – Present</div>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Lead development of design system and component library (React + TypeScript) used across 10+ internal apps, reducing UI bugs by 32%.</li>
+            <li>Migrated legacy dashboard to Next.js 14, achieving 40% faster perceived load time and improved SEO metrics.</li>
+            <li>Collaborated with backend teams implementing Java Spring microservices, improving API contract stability.</li>
+            <li>Mentored 3 junior developers, conducted code reviews and knowledge-sharing sessions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div><span class="job-title">Full-Stack Developer</span> · <span class="company">CreativeLabs Studio</span></div>
+          <div class="date">Aug 2020 – Dec 2022</div>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Built and maintained full-stack web apps using Vue.js + Node.js and PostgreSQL, serving 200k+ monthly users.</li>
+            <li>Integrated OAuth, payment gateway (Stripe) and real-time dashboard with WebSockets.</li>
+            <li>Optimized SQL queries and Redis caching, reducing response time by 28%.</li>
+            <li>Developed internal REST APIs with Java Spring Boot for client reporting tools.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="main-section">
+      <h2>Education</h2>
+      <div class="education-item">
+        <div class="job-header">
+          <div><span class="edu-title">M.S. in Computer Science</span> · <span class="institution">Carnegie Mellon University</span></div>
+          <div class="date">2018 – 2020</div>
+        </div>
+        <div class="job-description" style="margin-top: 0.2rem;">
+          <ul>
+            <li>Focus: Distributed Systems, Web Technologies, AI fundamentals. GPA: 3.9/4.0.</li>
+            <li>Graduate Teaching Assistant for “Advanced Web Development” course.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="education-item">
+        <div class="job-header">
+          <div><span class="edu-title">B.E. Software Engineering</span> · <span class="institution">University of British Columbia</span></div>
+          <div class="date">2014 – 2018</div>
+        </div>
+        <div class="job-description" style="margin-top: 0.2rem;">
+          <ul>
+            <li>Dean’s Honor List, Software Architecture & Design, Database Systems.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selected Projects -->
+    <div class="main-section">
+      <h2>Projects</h2>
+      <div class="project-item">
+        <div class="job-header">
+          <div><span class="project-title">AI TaskFlow</span> · <span class="company">Open Source</span></div>
+          <div class="date">2024</div>
+        </div>
+        <div class="project-description">
+          <ul>
+            <li>Full-stack productivity tool with React frontend, Java Spring Boot backend, OpenAI API integration for smart scheduling.</li>
+            <li>Implemented JWT authentication, deployed on AWS EC2 with GitHub Actions CI/CD → 500+ stars on GitHub.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-item">
+        <div class="job-header">
+          <div><span class="project-title">Portfolio & Blog Engine</span> · <span class="company">Personal</span></div>
+          <div class="date">2023</div>
+        </div>
+        <div class="project-description">
+          <ul>
+            <li>Custom headless CMS with Astro + Tailwind, markdown support and serverless functions. Lighthouse score 99/100.</li>
+            <li>Used TypeScript, SCSS modules, and integrated a page view counter with Redis.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-item">
+        <div class="job-header">
+          <div><span class="project-title">EcoDash – Carbon Tracker</span> · <span class="company">Hackathon Winner</span></div>
+          <div class="date">2022</div>
+        </div>
+        <div class="project-description">
+          <ul>
+            <li>Interactive dashboard visualizing carbon footprint using D3.js and Java Spring Data JPA. Award for best sustainability tech.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional certifications (compact) -->
+    <div class="main-section" style="margin-bottom: 0rem;">
+      <h2>Certifications</h2>
+      <div class="summary-text" style="font-size: 0.82rem; display: flex; flex-wrap: wrap; gap: 0.8rem;">
+        <span>✅ AWS Certified Developer – Associate</span>
+        <span>✅ Scrum Master (PSM I)</span>
+        <span>✅ Meta Frontend Specialization</span>
+      </div>
+    </div>
+    <hr />
+    <div style="font-size: 0.7rem; text-align: center; color: #6c868e; margin-top: 0.2rem;">
+      ⚡ References available upon request · Open to full-time opportunities
+    </div>
+  </div>
+</div>
+
+<!-- Simple JavaScript: print interaction + dynamic year update (optional maintainability) -->
+<script>
+  (function() {
+    // Print button functionality — generates perfect PDF / print one-page CV
+    const printBtn = document.getElementById('printResumeBtn');
+    if (printBtn) {
+      printBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.print();
+      });
+    }
+
+    // Optional: small dynamic footer add-on to show last compilation date (completely non-intrusive)
+    // Keeping with modern touch, shows hidden console message and verifies JS functionality
+    const currentYear = new Date().getFullYear();
+    const footerNote = document.querySelector('.main hr + div');
+    if (footerNote && footerNote.innerText.includes('References')) {
+      // subtle reminder that CV is up to date, no extra clutter
+      footerNote.setAttribute('title', `CV version · ${currentYear}`);
+    }
+    
+    // Extra: for accessibility / debugging in console (proves JS presence)
+    console.log("✅ Single-Page CV ready · Print-friendly layout active. Java (Spring/Java) skills included.");
+  })();
+</script>
+</body>
+</html>
